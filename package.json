@@ -10,9 +10,10 @@
     "clean": "yarn install:clean && yarn build:clean && yarn test:clean",
     "install:clean": "rm -rf package-lock.json yarn.lock node_modules",
     "prebuild": "yarn build:clean",
-    "build:clean": "rm -rf .buildResult build",
-    "build": "react-scripts build",
+    "build:clean": "rm -rf build && tizen clean",
+    "build": "react-scripts build && cp icon.png config.xml build && tizen build-web --output ../.buildResult -- build",
     "start": "react-scripts start",
+    "run:emulator": "tizen package --type wgt --sign Tivi -- .buildResult/ && tizen install --name ReactTizenApp.wgt --target TV-Samsung-Emulator -- .buildResult && tizen run --pkgid Utz81nMLJp.ReactTizenApp --target TV-Samsung-Emulator",
     "pretest": "yarn test:clean",
     "test:clean": "rm -rf coverage",
     "test": "react-scripts test"
