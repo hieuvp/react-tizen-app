@@ -1,14 +1,14 @@
-TARGET = TV-Samsung-Emulator
-PACKAGE = Utz81nMLJp
-NAME = ReactTizenApp
-CERTIFICATE = Tivi
+APP_NAME = ReactTizenApp
+PACKAGE_ID = Utz81nMLJp
+DEVICE_NAME = TV-Samsung-Emulator
+CERTIFICATE_PROFILE = Tivi
 
 build:
 	npx react-scripts build
 	cp icon.png config.xml build
 	tizen build-web --output ../.buildResult -- build
+	tizen package --type wgt --sign $(CERTIFICATE_PROFILE) -- .buildResult
 
 start:
-	tizen package --type wgt --sign $(CERTIFICATE) -- .buildResult
-	tizen install --name $(NAME).wgt --target $(TARGET) -- .buildResult
-	tizen run --pkgid $(PACKAGE).$(NAME) --target $(TARGET)
+	tizen install --name $(APP_NAME).wgt --target $(DEVICE_NAME) -- .buildResult
+	tizen run --pkgid $(PACKAGE_ID).$(APP_NAME) --target $(DEVICE_NAME)
