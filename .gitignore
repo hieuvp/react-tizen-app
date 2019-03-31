@@ -21,6 +21,7 @@ pids/
 *.pid.lock
 
 # Distribution and Build
+.buildResult/
 
 # Test Coverage
 coverage/
