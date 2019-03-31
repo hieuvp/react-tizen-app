@@ -7,10 +7,15 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "clean": "yarn install:clean && yarn build:clean && yarn test:clean",
+    "install:clean": "rm -rf package-lock.json yarn.lock node_modules",
+    "prebuild": "yarn build:clean",
+    "build:clean": "rm -rf .buildResult build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "pretest": "yarn test:clean",
+    "test:clean": "rm -rf coverage",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"
