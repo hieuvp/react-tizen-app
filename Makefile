@@ -1,7 +1,7 @@
-APP_NAME = ReactTizenApp
-PACKAGE_ID = Utz81nMLJp
 DEVICE_NAME = TV-Samsung-Emulator
 CERTIFICATE_PROFILE = Tivi
+APP_NAME = ReactTizenApp
+PACKAGE_ID = Utz81nMLJp
 
 build:
 	npx react-scripts build
