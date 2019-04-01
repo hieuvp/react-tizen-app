@@ -5,7 +5,7 @@ PACKAGE_ID = Utz81nMLJp
 
 build:
 	npx react-scripts build
-	cp icon.png config.xml build
+	cp config.xml icon.png build
 	tizen build-web --output ../.buildResult -- build
 	tizen package --type wgt --sign $(CERTIFICATE_PROFILE) -- .buildResult
 
