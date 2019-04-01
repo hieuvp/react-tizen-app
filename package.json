@@ -7,7 +7,7 @@
     "react-scripts": "2.1.8"
   },
   "scripts": {
-    "clean": "yarn install:clean && yarn build:clean && yarn test:clean",
+    "clean": "make clean && yarn install:clean && yarn build:clean && yarn test:clean",
     "install:clean": "rm -rf package-lock.json yarn.lock node_modules",
     "prebuild": "yarn build:clean",
     "build:clean": "rm -rf .buildResult build",

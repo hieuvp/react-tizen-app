@@ -13,5 +13,6 @@ start:
 	tizen install --name $(APP_NAME).wgt --target $(DEVICE_NAME) -- .buildResult
 	tizen run --pkgid $(PACKAGE_ID).$(APP_NAME) --target $(DEVICE_NAME)
 
-uninstall:
+clean:
+	tizen clean
 	tizen uninstall --pkgid $(PACKAGE_ID).$(APP_NAME) --target $(DEVICE_NAME)
