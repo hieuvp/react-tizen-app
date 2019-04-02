@@ -13,7 +13,7 @@
     "build:clean": "rm -rf .buildResult build",
     "build": "make build",
     "dev": "react-scripts start",
-    "prestart": "yarn build",
+    "prestart": "make clean && yarn build",
     "start": "make start",
     "pretest": "yarn test:clean",
     "test:clean": "rm -rf coverage",
