@@ -22,6 +22,7 @@ pids/
 
 # Distribution and Build
 .buildResult/
+build/
 
 # Test Coverage
 coverage/
